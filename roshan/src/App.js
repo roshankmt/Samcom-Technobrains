@@ -13,10 +13,10 @@ function App() {
     fetch("https://reqres.in/api/users").then((result) => {
       result.json().then((resp) => {
         console.log("result", resp)
-        setData(resp)
-        setEmail(resp[0].email)
-        setFirstname(resp[0].firstname)
-        setLastname(resp[0].lastname)
+        setData(resp.data)
+        setEmail(resp.data[0].email)
+        setFirstname(resp.data[0].firstname)
+        setLastname(resp.data[0].lastname)
       })
     })
   }, [])
@@ -37,7 +37,7 @@ function App() {
       }
     }.then((result) => {
       result.json().then((resp) => {
-        getUser()
+        this.getUser()
       })
     })
   }
@@ -71,7 +71,7 @@ function App() {
         <button onChange={updateUser}>Update User</button>
       </div>
 
-      <Userlist />
+      
     </div>
   );
 }

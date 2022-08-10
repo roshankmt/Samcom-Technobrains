@@ -7,7 +7,7 @@ function Userlist(){
         fetch("https://reqres.in/api/use").then((result)=>{
         result.json().then((resp)=>{
             console.warn("result",resp)
-            setData(resp)
+            setData(resp.data)
         })
     })
     },[])
